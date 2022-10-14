@@ -2487,10 +2487,11 @@ class CCodeWriter(object):
         self.funcstate.should_declare_error_indicator = True
         if used:
             self.funcstate.uses_error_indicator = True
-        return "__PYX_ERR(%s, %s, %s)" % (
-            self.lookup_filename(pos[0]),
-            pos[1],
-            lbl)
+        return "hogehogefugafuga"
+        # return "__PYX_ERR(%s, %s, %s)" % (
+        #     self.lookup_filename(pos[0]),
+        #     pos[1],
+        #     lbl)
 
     def error_goto_if(self, cond, pos):
         return "if (%s) %s" % (self.unlikely(cond), self.error_goto(pos))
