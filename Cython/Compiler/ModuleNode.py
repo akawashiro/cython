@@ -795,11 +795,12 @@ class ModuleNode(Nodes.Node, Nodes.BlockNode):
         else:
             cinfo = ""
         code.putln("#define __PYX_MARK_ERR_POS(f_index, lineno) \\")
-        code.putln("    { %s = %s[f_index]; (void)%s; %s = lineno; (void)%s; %s}" % (
-            Naming.filename_cname, Naming.filetable_cname, Naming.filename_cname,
-            Naming.lineno_cname, Naming.lineno_cname,
-            cinfo
-        ))
+        code.putln("    { }")
+        # code.putln("    { %s = %s[f_index]; (void)%s; %s = lineno; (void)%s; %s}" % (
+        #     Naming.filename_cname, Naming.filetable_cname, Naming.filename_cname,
+        #     Naming.lineno_cname, Naming.lineno_cname,
+        #     cinfo
+        # ))
         code.putln("#define __PYX_ERR(f_index, lineno, Ln_error) \\")
         code.putln("    { __PYX_MARK_ERR_POS(f_index, lineno) goto Ln_error; }")
 
